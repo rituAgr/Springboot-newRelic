@@ -1,0 +1,9 @@
+services:
+- pcfApp-Vault
+
+applications:
+- name: springboot-vault
+  path: build/libs/springbootPCFApp-0.0.1-SNAPSHOT.jar
+
+env:
+ JBP_CONFIG_DEBUG: '{enabled: true}'
