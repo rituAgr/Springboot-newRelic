@@ -1,21 +1,20 @@
 package com.example.springbootPCFApp;
 
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.newrelic.api.agent.NewRelic;
+import org.springframework.stereotype.Service;
 
-@RestController
+
+import java.util.HashMap;
+
+@Service
 public class VaultApiController {
+    Integer count = 1;
 
-    @Value("${vaultSecret:#{null}}")
-    private String vault_secret;
-
-    @Value("${spring.application.name}")
-    private String appName;
-
-    @RequestMapping("/secret")
-    public String index(){
-        return "Application-name: " +  appName + ", Vault-secret: " + vault_secret;
+    public void add(){
+        HashMap<String, Object> hashMap = new HashMap<String, Object>();
+        hashMap.put("Count",count);
+        NewRelic.getAgent().getInsights().recordCustomEvent("Service Call Count",hashMap);
+        count++;
     }
 }

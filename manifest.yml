@@ -1,9 +1,10 @@
 services:
-- pcfApp-Vault
+- newRelic-Service
 
 applications:
-- name: springboot-vault
+- name: springboot-newRelic
   path: build/libs/springbootPCFApp-0.0.1-SNAPSHOT.jar
+  random-route: true
 
 env:
- JBP_CONFIG_DEBUG: '{enabled: true}'
+  JAVA_OPTS: -Dnewrelic.config.license_key=<TBD> -Dnewrelic.config.app_name="springboot-newRelic"
