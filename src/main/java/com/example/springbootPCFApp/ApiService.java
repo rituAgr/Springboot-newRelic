@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 
 @Service
-public class VaultApiController {
+public class ApiService {
     Integer count = 1;
 
     public void add(){

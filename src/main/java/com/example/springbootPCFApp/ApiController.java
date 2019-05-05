@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 public class ApiController {
 
     @Autowired
-    private VaultApiController vaultApiController;
+    private ApiService apiService;
 
     @GetMapping("/prof/{id}")
     public String getProf(@PathVariable String id){
-        vaultApiController.add();
+        apiService.add();
         return "Get APi received Successfully for Professor "+id;
     }
 

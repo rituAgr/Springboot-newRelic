@@ -22,19 +22,11 @@ repositories {
 
 ext {
 	set('springCloudVersion', 'Greenwich.SR1')
-//	newrelicVersion='3.5.1'
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
-//	compile 'com.newrelic.agent.java:newrelic-api:4.9.0'
-// https://mvnrepository.com/artifact/com.newrelic.agent.java/newrelic-api
-//	compile group: 'com.newrelic.agent.java', name: 'newrelic-api', version: '2.14.1'
-// https://mvnrepository.com/artifact/com.newrelic.agent.java/newrelic-api
-//	compile group: 'com.newrelic.agent.java', name: 'newrelic-api', version: '5.0.0'
-//	newrelic "com.newrelic.agent.java:newrelic-agent:${newrelicVersion}"
-	// https://mvnrepository.com/artifact/com.newrelic.agent.java/newrelic-api
 	compile group: 'com.newrelic.agent.java', name: 'newrelic-api', version: '3.26.1'
 
 	annotationProcessor 'org.projectlombok:lombok:1.18.6'
